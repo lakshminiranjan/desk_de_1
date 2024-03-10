@@ -291,23 +291,27 @@
   }
 }
 
+
 @media (max-width: 576px) {
   .profile_container1 {
     padding: 46px 29px;
     &__profile_details_container {
-      flex-direction: column;
+      flex-direction: column; /* Changed from row to column */
       gap: 24px;
+      align-items: center; /* Keeps items centered */
 
-      &__image {
-        width: 120px;
-        height: 120px;
-        border-radius: 60px;
-        margin: 0 auto;
-      }
+      &__image_name_role {
+        display: flex; /* New container for image, name, and role */
+        flex-direction: row; /* Aligns image, name, and role in a row */
+        gap: 12px; /* Space between image, name, and role */
+        align-items: center; /* Aligns items vertically in the center */
 
-      &__profile_information {
-        gap: 12px;
-        padding: 0 12px;
+        &__image {
+          width: 120px;
+          height: 120px;
+          border-radius: 60px;
+          margin: 0 auto;
+        }
 
         &__name {
           font-size: 16px;
@@ -322,6 +326,13 @@
           width: 163px;
           height: 19px;
         }
+      }
+
+      &__profile_information {
+        gap: 12px;
+        padding: 0 12px;
+        display: flex;
+        flex-direction: column; /* Kept as column to stack description and textboxfield vertically */
 
         &__description {
           font-size: 8px;
@@ -330,27 +341,33 @@
           height: 60px;
         }
 
-        &__textboxEmail,
-        &__textboxMobile,
-        &__textboxLocation {
+        &__more_details {
+          flex-direction: column;
           width: 244px;
-          height: 31px;
-          padding: 10px 8px;
-          margin: 0 auto;
+          gap: 12px;
 
-          &__email_Icon,
-          &__phone_Number,
-          &__location_Icon {
-            width: 10px;
-            height: 10px;
-          }
+          &__textboxEmail,
+          &__textboxMobile,
+          &__textboxLocation {
+            width: 244px;
+            height: 31px;
+            padding: 10px 8px;
+            margin: 12px auto 0 auto;
 
-          &__email,
-          &___9999999999,
-          &__address {
-            font-size: 8px;
-            line-height: 13px;
-            text-align: center;
+            &__email_Icon,
+            &__phone_Number,
+            &__location_Icon {
+              width: 10px;
+              height: 10px;
+            }
+
+            &__email,
+            &___9999999999,
+            &__address {
+              font-size: 8px;
+              line-height: 13px;
+              text-align: center;
+            }
           }
         }
       }
